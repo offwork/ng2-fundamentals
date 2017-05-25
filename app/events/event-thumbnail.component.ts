@@ -23,7 +23,7 @@ import { IEvent } from "./shared/index";
     `,
     styles: [`
         .thumbnail { min-height: 210px; }
-        .ped-left { margin-left: 10px; },
+        .pad-left { margin-left: 10px; }
         .well div { color: #bbb; }
     `]
 })

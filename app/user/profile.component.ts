@@ -19,7 +19,7 @@ export class ProfileComponent implements OnInit {
   private firstName: FormControl;
   private lastName: FormControl;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private router:Router, private authService:AuthService) {}
 
   ngOnInit() {
     this.firstName = new FormControl(this.authService.currentUser.firstName, [Validators.required, Validators.pattern('[a-zA-Z].*')]);
@@ -39,9 +39,9 @@ export class ProfileComponent implements OnInit {
   }
 
   validateFirstName() {
-    return this.firstName.valid && this.firstName.untouched;
+    return this.firstName.valid || this.firstName.untouched;
   }
-
+  
   validateLastName() {
     return this.lastName.valid || this.lastName.untouched;
   }
